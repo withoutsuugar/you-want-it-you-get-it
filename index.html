@@ -38,7 +38,6 @@
       border-radius: 12px;
       cursor: pointer;
       margin-right: 20px;
-      type: button; /* obavezno za sigurno funkcionisanje */
     }
 
     #no {
@@ -46,7 +45,7 @@
       padding: 8px 18px;
       position: absolute;
       top: 50%;
-      left: 150px; /* početna pozicija */
+      left: 150px;
       background-color: rgb(201, 182, 218);
       border: 1px solid #c9b6da;
       border-radius: 35px;
@@ -60,6 +59,7 @@
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <h1>Would you like to eat breakfast with me?</h1>
@@ -68,13 +68,17 @@
       <button id="yes" type="button">YES</button>
       <button id="no" type="button">no</button>
     </div>
-<div class="shy-text">
-       Please, click what you want
+
+    <div class="shy-text">
+      Please, click what you want
     </div>
+  </div> <!-- ZATVOREN container -->
+
   <script>
-   document.getElementById("yes").onclick = function () {
-    window.location.href = "yes.html";
-  }
+    // YES dugme vodi na novu stranicu
+    document.getElementById("yes").onclick = function () {
+      window.location.href = "yes.html";
+    };
 
     // NO dugme beži od kursora
     const noBtn = document.getElementById("no");
@@ -83,6 +87,6 @@
       const y = Math.random() * 200 - 100;
       noBtn.style.transform = `translate(${x}px, ${y}px)`;
     };
-
+  </script>
 </body>
 </html>
