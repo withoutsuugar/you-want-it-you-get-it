@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>You want it, you get it</title>
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background: #769fa4;
+    }
+
+    .container {
+      text-align: center;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 40px;
+    }
+
+    .buttons {
+      position: relative;
+      height: 100px;
+    }
+
+    #yes {
+      font-size: 28px;
+      padding: 15px 40px;
+      background-color: #4e2c11;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      margin-right: 20px;
+      type: button; /* obavezno za sigurno funkcionisanje */
+    }
+
+    #no {
+      font-size: 14px;
+      padding: 8px 18px;
+      position: absolute;
+      top: 50%;
+      left: 150px; /* početna pozicija */
+      background-color: rgb(201, 182, 218);
+      border: 1px solid #c9b6da;
+      border-radius: 35px;
+      cursor: pointer;
+    }
+
+    .shy-text {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #1f1717;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Would you like to eat breakfast with me?</h1>
+
+    <div class="buttons">
+      <button id="yes" type="button">YES</button>
+      <button id="no" type="button">no</button>
+    </div>
+<div class="shy-text">
+       Please, click what you want
+    </div>
+  <script>
+   document.getElementById("yes").onclick = function () {
+    window.location.href = "yes.html";
+  }
+
+    // NO dugme beži od kursora
+    const noBtn = document.getElementById("no");
+    noBtn.onmouseover = function () {
+      const x = Math.random() * 300 - 150;
+      const y = Math.random() * 200 - 100;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    };
+
+</body>
+</html>
